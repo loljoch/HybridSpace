@@ -18,7 +18,7 @@ public class CharacterInput : MonoBehaviour
 
     #region MovementVars
     [Header("Movement")]
-    [SerializeField] private LayerMask platform;
+    [SerializeField] private int platform;
     [SerializeField] private float movementSpeed;
     [SerializeField] private Color selectedCell, deselectedCell;
     private DrawGrid dGrid;
@@ -87,7 +87,7 @@ public class CharacterInput : MonoBehaviour
     {
         if (tile != null)
         {
-            cTile.material.SetColor("_BaseColor", color);
+            cTile.material.SetColor("_Color", color);
             cTile.sortingOrder = orderLayer;
         }
     }

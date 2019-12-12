@@ -101,15 +101,15 @@ public class LevelBuilder : MonoBehaviour
             }
         }
 
-        //AssetDatabase.CreateAsset(
-        //    new MazeScriptableObject(
-        //        roomNames, 
-        //        roomPositions, 
-        //        roomRotations, 
-        //        FindObjectOfType<GridMaker>().transform.position
-        //        ), 
-        //    "Assets/SavedMazes/" + filename + ".asset");
-        //AssetDatabase.SaveAssets();
+        AssetDatabase.CreateAsset(
+            new MazeScriptableObject(
+                roomNames,
+                roomPositions,
+                roomRotations,
+                FindObjectOfType<GridMaker>().transform.position
+                ),
+            "Assets/SavedMazes/" + filename + ".asset");
+        AssetDatabase.SaveAssets();
     }
 
     private void RotatePlatform(Transform platform)

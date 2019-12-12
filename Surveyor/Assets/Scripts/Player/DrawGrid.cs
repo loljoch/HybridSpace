@@ -7,7 +7,7 @@ public class DrawGrid : MonoBehaviour
     [SerializeField] private Transform cellPrefab;
     [SerializeField] private Vector2 gridSize = new Vector2(5, 5);
     [SerializeField] private float cellSize = 1;
-    [SerializeField] private float yPos = 1.01f;
+    [SerializeField] private float yPos = -1.01f;
     private Transform gridParent;
     private List<Transform> cellPool = new List<Transform>();
 
@@ -51,10 +51,10 @@ public class DrawGrid : MonoBehaviour
 
     private bool CellAvailable(Vector3 pos)
     {
-        pos.y += 0.5f;
-        pos.x += cellSize/2;
-        pos.z += cellSize/2;
-        if (Physics.Raycast(pos, Vector3.down, 1))
+        //pos.y += 0.5f;
+        pos.x += cellSize / 2;
+        pos.z += cellSize / 2;
+        if (Physics.Raycast(pos, Vector3.down * 1.5f, 1))
         {
             return true;
         }
