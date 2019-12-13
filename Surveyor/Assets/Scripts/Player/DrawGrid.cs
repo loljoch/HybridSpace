@@ -8,6 +8,7 @@ public class DrawGrid : MonoBehaviour
     [SerializeField] private Vector2 gridSize = new Vector2(5, 5);
     [SerializeField] private float cellSize = 1;
     [SerializeField] private float yPos = -1.01f;
+    [SerializeField] private float xGridOffset, zGridOffset = 0;
     [SerializeField] private float yPosRay = 2f;
     private Transform gridParent;
     private List<Transform> cellPool = new List<Transform>();
@@ -16,6 +17,7 @@ public class DrawGrid : MonoBehaviour
     {
         gridParent = new GameObject("Grid").transform;
         DrawCells();
+        gridParent.transform.position = new Vector3(xGridOffset, 0, zGridOffset);
     }
 
     [EasyButtons.Button]
@@ -28,8 +30,12 @@ public class DrawGrid : MonoBehaviour
         PoolCells();
         Vector3 position = transform.position;
         position.y = yPos;
+        position.x = Mathf.RoundToInt(position.x);
         position.x -= (gridSize.x / 2) * cellSize;
+        //position.x += 0.5f;
+        position.z = Mathf.RoundToInt(position.z);
         position.z -= (gridSize.y / 2) * cellSize;
+        //position.z += 0.5f;
 
         for (int y = 0; y < gridSize.y; y++)
         {
@@ -64,8 +70,8 @@ public class DrawGrid : MonoBehaviour
     private bool CellAvailable(Vector3 pos)
     {
         pos.y += yPosRay;
-        pos.x += cellSize / 2;
-        pos.z += cellSize / 2;
+        pos.x += cellSize / 1;
+        pos.z += cellSize / 1;
         Debug.DrawRay(pos, Vector3.down * 1.5f, Color.red, 1);
         if (Physics.Raycast(pos, Vector3.down * 1.5f, 1))
         {
@@ -106,3 +112,4 @@ public class DrawGrid : MonoBehaviour
         }
     }
 }
+

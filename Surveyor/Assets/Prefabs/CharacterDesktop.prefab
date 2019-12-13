@@ -262,4 +262,6 @@ MonoBehaviour:
   gridSize: {x: 7, y: 7}
   cellSize: 1
   yPos: 0.1
+  xPosDivider: 2
+  zPosDivider: 2
   yPosRay: 0.5
