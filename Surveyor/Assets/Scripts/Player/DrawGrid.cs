@@ -32,22 +32,22 @@ public class DrawGrid : MonoBehaviour
         position.y = yPos;
         position.x = Mathf.RoundToInt(position.x);
         position.x -= (gridSize.x / 2) * cellSize;
-        //position.x += 0.5f;
+        position.x -= 0.5f;
         position.z = Mathf.RoundToInt(position.z);
         position.z -= (gridSize.y / 2) * cellSize;
-        //position.z += 0.5f;
+        position.z -= 0.5f;
 
         for (int y = 0; y < gridSize.y; y++)
         {
             if (CellAvailable(position))
             {
-                GetCell().position = position;
+                //GetCell().position = position;
             }
             for (int x = 0; x < gridSize.x; x++)
             {
                 if (CellAvailable(position))
                 {
-                    GetCell().position = position;
+                    //GetCell().position = position;
                 }
                 position.z += cellSize;
             }
@@ -73,8 +73,12 @@ public class DrawGrid : MonoBehaviour
         pos.x += cellSize / 1;
         pos.z += cellSize / 1;
         Debug.DrawRay(pos, Vector3.down * 1.5f, Color.red, 1);
-        if (Physics.Raycast(pos, Vector3.down * 1.5f, 1))
+        RaycastHit hit;
+        if (Physics.Raycast(pos, Vector3.down * 1.5f, out hit))
         {
+            Vector3 hitPos = hit.point;
+            hitPos.y = yPos;
+            GetCell().position = hitPos;
             return true;
         }
 
