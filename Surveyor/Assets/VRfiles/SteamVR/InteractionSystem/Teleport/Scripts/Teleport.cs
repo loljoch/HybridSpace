@@ -8,10 +8,11 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
 
+
 namespace Valve.VR.InteractionSystem
 {
-	//-------------------------------------------------------------------------
-	public class Teleport : MonoBehaviour
+    //-------------------------------------------------------------------------
+    public class Teleport : MonoBehaviour
     {
         public SteamVR_Action_Boolean teleportAction = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("Teleport");
 
@@ -903,6 +904,7 @@ namespace Valve.VR.InteractionSystem
 			}
 
 			Teleport.Player.Send( pointedAtTeleportMarker );
+
 		}
 
 
