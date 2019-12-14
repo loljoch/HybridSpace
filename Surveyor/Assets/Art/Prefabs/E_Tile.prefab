@@ -215,13 +215,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2788216661402246934}
-  m_LocalRotation: {x: 0.9985343, y: -0, z: 0, w: 0.054122888}
-  m_LocalPosition: {x: 1.5873998, y: 3.2927818, z: 0.87264895}
+  m_LocalRotation: {x: -0, y: 0.11712954, z: -0, w: 0.9931167}
+  m_LocalPosition: {x: 1.513, y: 3.2927818, z: 0.913}
   m_LocalScale: {x: 1.1655123, y: 1.1655123, z: 1.1655123}
   m_Children: []
   m_Father: {fileID: 1068535736090558040}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 13.453001, z: 0}
 --- !u!33 &4783244590733530290
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -247,7 +247,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1536801564941052725, guid: 4ba7cb8b270ae1342a5411c7e262e055, type: 3}
+  - {fileID: 2100000, guid: b6158d0d831018c44beb2f3ea26213cd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -434,7 +434,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1068535736090558040}
   m_Layer: 0
-  m_Name: projectHybrideTileIV4 (3)
+  m_Name: E_Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -735,7 +735,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9ff2716c93b11cc4c9ba41bd71b7ee5f, type: 2}
+  - {fileID: 2100000, guid: b6158d0d831018c44beb2f3ea26213cd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
