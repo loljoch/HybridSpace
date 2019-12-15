@@ -39,16 +39,11 @@ public class DrawGrid : MonoBehaviour
 
         for (int y = 0; y < gridSize.y; y++)
         {
-            if (CellAvailable(position))
-            {
-                //GetCell().position = position;
-            }
+            SetCell(position);
+
             for (int x = 0; x < gridSize.x; x++)
             {
-                if (CellAvailable(position))
-                {
-                    //GetCell().position = position;
-                }
+                SetCell(position);
                 position.z += cellSize;
             }
             position.z -= gridSize.x;
@@ -67,7 +62,7 @@ public class DrawGrid : MonoBehaviour
         DrawCells();
     }
 
-    private bool CellAvailable(Vector3 pos)
+    private bool SetCell(Vector3 pos)
     {
         pos.y += yPosRay;
         pos.x += cellSize / 1;

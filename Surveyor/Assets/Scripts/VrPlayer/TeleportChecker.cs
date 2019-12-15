@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TeleportChecker : MonoBehaviour
 {
+    public UnityEvent onTeleport;
     [SerializeField] private Transform playerTransform;
-    [SerializeField] private DrawGrid drawGrid;
     private Vector3 lastPosition;
 
     void Start()
@@ -17,7 +18,7 @@ public class TeleportChecker : MonoBehaviour
     {
         if (lastPosition != playerTransform.position)
         {
-            drawGrid.DrawCells();
+            onTeleport?.Invoke();
         }
     }
 
