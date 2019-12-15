@@ -16,11 +16,15 @@ public class TiltManager : MonoBehaviour
         wantedVelocity.x = Input.GetAxis(LRaxis);
         wantedVelocity.z = Input.GetAxis(DUaxis);
         TiltObjects();
+        TiltCamera();
     }
 
     private void TiltCamera()
     {
-
+        Vector3 pivotRotation = cameraPivot.localEulerAngles;
+        pivotRotation.x = xAngle * Input.GetAxis(DUaxis);
+        pivotRotation.z = zAngle * Input.GetAxis(LRaxis);
+        cameraPivot.localEulerAngles = pivotRotation;
     }
 
     private void TiltObjects()
