@@ -4,15 +4,33 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Lock[] locks;
+
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.gameObject.GetComponent<Lock>())
+        {
+            Lock fLock = collision.gameObject.GetComponent<Lock>();
+            if (CheckLock(fLock))
+            {
+                if (fLock.isLocked == true)
+                {
+                    fLock.Unlock();
+                }
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private bool CheckLock(Lock _lock)
     {
-        
+        for (int i = 0; i < locks.Length; i++)
+        {
+            if (_lock == locks[i])
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
