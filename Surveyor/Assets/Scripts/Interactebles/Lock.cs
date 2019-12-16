@@ -5,6 +5,7 @@ using UnityEngine;
 public class Lock : MonoBehaviour
 {
     public bool isLocked;
+    public Transform keyLockPoint;
     [SerializeField] private Animator targetedDoor;
 
     public void Unlock()

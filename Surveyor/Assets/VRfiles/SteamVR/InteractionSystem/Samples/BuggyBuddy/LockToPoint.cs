@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 namespace Valve.VR.InteractionSystem.Sample
 {
     public class LockToPoint : MonoBehaviour
     {
+        public UnityEvent OnSnap;
         public Transform snapTo;
         private Rigidbody body;
         public float snapTime = 2;
@@ -22,6 +24,11 @@ namespace Valve.VR.InteractionSystem.Sample
 
         private void FixedUpdate()
         {
+            if (snapTo == null)
+            {
+                return;
+            }
+
             bool used = false;
             if (interactable != null)
                 used = interactable.attachedToHand;
@@ -39,9 +46,10 @@ namespace Valve.VR.InteractionSystem.Sample
 
                 if (dropTimer > 1)
                 {
-                    //transform.parent = snapTo;
                     transform.position = snapTo.position;
                     transform.rotation = snapTo.rotation;
+                    transform.parent = snapTo;
+                    OnSnap?.Invoke();
                 }
                 else
                 {
