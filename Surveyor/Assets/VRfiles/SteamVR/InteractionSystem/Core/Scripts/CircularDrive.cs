@@ -10,7 +10,6 @@ using System.Collections;
 
 namespace Valve.VR.InteractionSystem
 {
-
 	//-------------------------------------------------------------------------
 	[RequireComponent( typeof( Interactable ) )]
 	public class CircularDrive : MonoBehaviour
@@ -75,6 +74,7 @@ namespace Valve.VR.InteractionSystem
 		[Tooltip( "The output angle value of the drive in degrees, unlimited will increase or decrease without bound, take the 360 modulus to find number of rotations" )]
 		public float outAngle;
 
+        private CircularDrive[] sameAxisValves;
 		private Quaternion start;
 
 		private Vector3 worldPlaneNormal = new Vector3( 1.0f, 0.0f, 0.0f );
@@ -544,5 +544,17 @@ namespace Valve.VR.InteractionSystem
 				}
 			}
 		}
+
+        private void SendAngleToOtherValves()
+        {
+            if (sameAxisValves.Length > 0)
+            {
+                for (int i = 0; i < sameAxisValves.Length; i++)
+                {
+                    sameAxisValves[i].transform.rotation = transform.rotation;
+                    sameAxisValves[i].outAngle = outAngle;
+                }
+            }
+        }
 	}
 }

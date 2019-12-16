@@ -48,7 +48,10 @@ public class LevelBuilder : MonoBehaviour
         }
         if (cSelected == null)
         {
-            currentPlatform.SetActive(false);
+            if (currentPlatform != null)
+            {
+                currentPlatform.SetActive(false);
+            }
             return;
         }
         currentPlatform.SetActive(true);

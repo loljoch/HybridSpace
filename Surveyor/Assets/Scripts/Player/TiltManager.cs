@@ -1,20 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class TiltManager : MonoBehaviour
 {
-
+    public float xAngle = 0;
+    public float zAngle = 0;
+    public CircularDrive zValve, xValve;
     [SerializeField] Transform cameraPivot;
     [SerializeField] private string LRaxis, DUaxis;
     [SerializeField] private List<Rigidbody> rbList;
     private Vector3 wantedVector3 = Vector3.zero;
-    private float zAngle = 10;
-    private float xAngle = 10;
 
     public float speed = 1.0F;
     private float startTime;
     private float journeyLength;
+
 
     void Start()
     {
@@ -25,8 +27,10 @@ public class TiltManager : MonoBehaviour
 
     private void Update()
     {
-        wantedVector3.x = xAngle * -Input.GetAxis(DUaxis);
-        wantedVector3.z = zAngle * -Input.GetAxis(LRaxis);
+        float xAngleMax = xValve.outAngle / 4.5f;
+        float zAngleMax = zValve.outAngle / 4.5f;
+        wantedVector3.x = xAngleMax * -Input.GetAxis(DUaxis);
+        wantedVector3.z = zAngleMax * -Input.GetAxis(LRaxis);
 
         float distCovered = (Time.time - startTime) * speed;
         float fractionOfJourney = distCovered / journeyLength;

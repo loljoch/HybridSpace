@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lock : MonoBehaviour
+public class Lock : Snappable
 {
     public bool isLocked;
-    public Transform keyLockPoint;
     [SerializeField] private Animator targetedDoor;
+
+    public override void OnSnap()
+    {
+        Unlock();
+    }
 
     public void Unlock()
     {

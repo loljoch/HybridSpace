@@ -5,37 +5,29 @@ using Valve.VR.InteractionSystem.Sample;
 
 public class Key : MonoBehaviour
 {
-    public Lock[] locks;
+    public Snappable[] locks;
     public LockToPoint lockTo;
-    private Lock fLock;
+    private Snappable fSnappable;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Lock>())
+        if (other.GetComponent<Snappable>())
         {
-            fLock = other.GetComponent<Lock>();
-            if (CheckLock(fLock))
+            fSnappable = other.GetComponent<Snappable>();
+            if (CheckSnappable(fSnappable))
             {
-                if (fLock.isLocked == true)
-                {
-                    fLock.isLocked = false;
-                    GetComponent<SphereCollider>().enabled = false;
-                    lockTo.snapTo = fLock.keyLockPoint;
-                }
+                GetComponent<Collider>().enabled = false;
+                lockTo.snapTo = fSnappable.keyLockPoint;
+                lockTo.OnSnap.AddListener(fSnappable.OnSnap);
             }
         }
     }
 
-    public void OpenDoor()
-    {
-        fLock.Unlock();
-    }
-
-    private bool CheckLock(Lock _lock)
+    private bool CheckSnappable(Snappable _snappable)
     {
         for (int i = 0; i < locks.Length; i++)
         {
-            if (_lock == locks[i])
+            if (_snappable == locks[i])
             {
                 return true;
             }

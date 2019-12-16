@@ -67,7 +67,6 @@ public class DrawGrid : MonoBehaviour
         pos.y += yPosRay;
         pos.x += cellSize / 1;
         pos.z += cellSize / 1;
-        Debug.DrawRay(pos, Vector3.down * 1.5f, Color.red, 1);
         RaycastHit hit;
         if (Physics.Raycast(pos, Vector3.down * 1.5f, out hit))
         {
