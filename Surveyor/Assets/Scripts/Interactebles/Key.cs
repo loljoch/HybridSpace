@@ -19,6 +19,7 @@ public class Key : MonoBehaviour
                 if (fLock.isLocked == true)
                 {
                     fLock.isLocked = false;
+                    GetComponent<SphereCollider>().enabled = false;
                     lockTo.snapTo = fLock.keyLockPoint;
                 }
             }

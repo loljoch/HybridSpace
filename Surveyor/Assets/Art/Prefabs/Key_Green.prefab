@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 704732612702028631}
   - component: {fileID: 6591733816927625900}
   - component: {fileID: 7206364306911646736}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 3379150424847172030}
   - component: {fileID: 1480604433940830912}
   - component: {fileID: 2756946626398134452}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,8 +173,7 @@ GameObject:
   - component: {fileID: 1296395696313670650}
   - component: {fileID: 1900603612742438375}
   - component: {fileID: 45017236389295570}
-  - component: {fileID: 567433610595443125}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Key_Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,20 +406,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   interactable: {fileID: 0}
---- !u!114 &567433610595443125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1002756496845649084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecd73422fbc4be54a9f4d8f3972f8579, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  antiFlip: []
-  defaultHand: 1
 --- !u!1 &2774345228850555728
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +417,7 @@ GameObject:
   - component: {fileID: 6979727001848281963}
   - component: {fileID: 1037723372024906685}
   - component: {fileID: 7211845591765610186}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -510,7 +495,7 @@ GameObject:
   - component: {fileID: 5206782254206273497}
   - component: {fileID: 3580307461594305562}
   - component: {fileID: 2551692178379478225}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -588,7 +573,7 @@ GameObject:
   - component: {fileID: 2104629277279859718}
   - component: {fileID: 2139324578690480537}
   - component: {fileID: 3437720369598460954}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Ears
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -666,7 +651,7 @@ GameObject:
   - component: {fileID: 7220655754548502286}
   - component: {fileID: 2907855498277314235}
   - component: {fileID: 4230427269335510421}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Legs1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
