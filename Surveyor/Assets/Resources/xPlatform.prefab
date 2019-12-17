@@ -488,7 +488,7 @@ GameObject:
   - component: {fileID: 2877134106340333437}
   - component: {fileID: 8491221315047269979}
   - component: {fileID: 2504087587536469357}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: XSection_Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

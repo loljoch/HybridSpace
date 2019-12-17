@@ -486,7 +486,7 @@ GameObject:
   - component: {fileID: 557604731595251343}
   - component: {fileID: 4477789689161918344}
   - component: {fileID: 8754751845161653836}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Corner_Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

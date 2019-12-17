@@ -5,11 +5,13 @@ using UnityEngine;
 public class DrawGrid : MonoBehaviour
 {
     [SerializeField] private Transform cellPrefab;
+    [SerializeField] private Transform camTransform;
     [SerializeField] private Vector2 gridSize = new Vector2(5, 5);
     [SerializeField] private float cellSize = 1;
     [SerializeField] private float yPos = -1.01f;
     [SerializeField] private float xGridOffset, zGridOffset = 0;
     [SerializeField] private float yPosRay = 2f;
+    [SerializeField] private LayerMask platformLayer = 10;
     private Transform gridParent;
     private List<Transform> cellPool = new List<Transform>();
 
@@ -68,12 +70,23 @@ public class DrawGrid : MonoBehaviour
         pos.x += cellSize / 1;
         pos.z += cellSize / 1;
         RaycastHit hit;
-        if (Physics.Raycast(pos, Vector3.down * 1.5f, out hit))
+        //if (Physics.Raycast(pos, Vector3.down * 1.5f, out hit))
+        //{
+        //    Vector3 hitPos = hit.point;
+        //    hitPos.y = yPos;
+        //    GetCell().position = hitPos;
+        //    return true;
+        //}
+        Debug.DrawLine(camTransform.position, pos, Color.red, 5);
+        if (Physics.Linecast(camTransform.position, pos, out hit))
         {
-            Vector3 hitPos = hit.point;
-            hitPos.y = yPos;
-            GetCell().position = hitPos;
-            return true;
+            if (hit.transform.gameObject.layer == platformLayer)
+            {
+                Vector3 hitPos = hit.point;
+                hitPos.y = yPos;
+                GetCell().position = hitPos;
+                return true;
+            }
         }
 
         return false;
