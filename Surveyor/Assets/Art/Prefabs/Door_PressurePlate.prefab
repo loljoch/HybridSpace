@@ -449,11 +449,11 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3582998714628170923}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 10fd1ba55d9520e4f98df69e8bfbb91d, type: 3}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: fb18fc3347a71814f9714c81de09cce2, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -498,7 +498,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -528,7 +528,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 1.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1258,7 +1258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6498769492371095790}
-  - component: {fileID: 7034355462758087841}
+  - component: {fileID: 8263523461033643337}
   m_Layer: 0
   m_Name: Door_PressurePlate
   m_TagString: Untagged
@@ -1283,7 +1283,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &7034355462758087841
+--- !u!95 &8263523461033643337
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -1293,7 +1293,7 @@ Animator:
   m_GameObject: {fileID: 7812370634087478013}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1b15bcc2cd4515b4bb16c3a8a60c4335, type: 2}
+  m_Controller: {fileID: 9100000, guid: 24437698df94b124c958fedfc10a18d6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
