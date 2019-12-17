@@ -10,13 +10,15 @@ GameObject:
   m_Component:
   - component: {fileID: 144225471642830643}
   - component: {fileID: 333969319}
-  m_Layer: 0
+  - component: {fileID: 1050395262}
+  - component: {fileID: 2763161295650398500}
+  m_Layer: 2
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &144225471642830643
 Transform:
   m_ObjectHideFlags: 0
@@ -44,9 +46,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44deeec07fed2c043bb81e25276cb72f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocked: 1
-  keyLockPoint: {fileID: 753135916154800458}
-  targetedDoor: {fileID: 7178572103556252987}
+  keyLockPoint: {fileID: 0}
+  isLocked: 0
+  targetedDoor: {fileID: 0}
+--- !u!65 &1050395262
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144225471642830642}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 41.865932, y: 74.72487, z: 67.08908}
+  m_Center: {x: 59.812206, y: 154.70186, z: -0.02848506}
+--- !u!65 &2763161295650398500
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144225471642830642}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 41.865932, y: 74.72487, z: 67.08908}
+  m_Center: {x: 59.812206, y: 154.70186, z: -0.02848506}
 --- !u!1 &311826709891998380
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,7 +84,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8953106963278866715}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Outer_Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +121,7 @@ GameObject:
   - component: {fileID: 233364421629149500}
   - component: {fileID: 2274583908249365247}
   - component: {fileID: 2958232909160281478}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Squares
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +199,7 @@ GameObject:
   - component: {fileID: 3172151578169500497}
   - component: {fileID: 4417817203706857715}
   - component: {fileID: 4474168937106112242}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: polySurface141
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,7 +275,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8606427169906436876}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Key_Input 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +310,7 @@ GameObject:
   - component: {fileID: 646424328506354596}
   - component: {fileID: 2150279990632020554}
   - component: {fileID: 1457617141280147326}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Rims 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +386,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6869752298896782005}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Middle_Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -391,7 +419,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 753135916154800458}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: KeySnapPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -423,7 +451,7 @@ GameObject:
   - component: {fileID: 3469751014156469013}
   - component: {fileID: 3370578477453258453}
   - component: {fileID: 4221244757888298388}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Snakes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -501,7 +529,7 @@ GameObject:
   - component: {fileID: 4556477275646338363}
   - component: {fileID: 4432576967484347776}
   - component: {fileID: 8773993811065780010}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Rims
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -579,7 +607,7 @@ GameObject:
   - component: {fileID: 9207498651984445660}
   - component: {fileID: 3274019490693220310}
   - component: {fileID: 8639104128042525034}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: InputPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -657,7 +685,7 @@ GameObject:
   - component: {fileID: 3260260769918963118}
   - component: {fileID: 7172448243643922295}
   - component: {fileID: 1774786947666330598}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plane 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -735,6 +763,8 @@ GameObject:
   - component: {fileID: 5360496525848957731}
   - component: {fileID: 1386935830597580402}
   - component: {fileID: 81903347689564140}
+  - component: {fileID: 1050395263}
+  - component: {fileID: 1790410012}
   m_Layer: 0
   m_Name: Door_Block
   m_TagString: Untagged
@@ -802,6 +832,32 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1050395263
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5949656887357070014}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 57.117016, y: 300, z: 300}
+  m_Center: {x: 0, y: 150, z: 0}
+--- !u!65 &1790410012
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5949656887357070014}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 57.117016, y: 300, z: 300}
+  m_Center: {x: 0, y: 150, z: 0}
 --- !u!1 &6362927317073606362
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,7 +868,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4641091505548627594}
   - component: {fileID: 7624961481199658818}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Key_Input_element
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -863,7 +919,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6354614424662522228}
   - component: {fileID: 7178572103556252987}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -916,7 +972,7 @@ GameObject:
   - component: {fileID: 3733578565680923201}
   - component: {fileID: 2857457078339422889}
   - component: {fileID: 7959330078319238315}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
