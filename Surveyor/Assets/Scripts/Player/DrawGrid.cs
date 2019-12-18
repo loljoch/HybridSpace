@@ -70,19 +70,12 @@ public class DrawGrid : MonoBehaviour
         pos.x += cellSize / 1;
         pos.z += cellSize / 1;
         RaycastHit hit;
-        //if (Physics.Raycast(pos, Vector3.down * 1.5f, out hit))
-        //{
-        //    Vector3 hitPos = hit.point;
-        //    hitPos.y = yPos;
-        //    GetCell().position = hitPos;
-        //    return true;
-        //}
-        Debug.DrawLine(camTransform.position, pos, Color.red, 5);
-        if (Physics.Linecast(camTransform.position, pos, out hit))
+        Debug.DrawRay(pos, Vector3.down * 1.5f, Color.blue, 4);
+        if (Physics.Raycast(pos, Vector3.down * 1.5f, out hit))
         {
-            if (hit.transform.gameObject.layer == platformLayer)
+            Vector3 hitPos = hit.point;
+            if (!Physics.Linecast(camTransform.position, hitPos, platformLayer))
             {
-                Vector3 hitPos = hit.point;
                 hitPos.y = yPos;
                 GetCell().position = hitPos;
                 return true;

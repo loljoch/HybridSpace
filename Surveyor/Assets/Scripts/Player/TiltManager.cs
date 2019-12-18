@@ -5,8 +5,6 @@ using Valve.VR.InteractionSystem;
 
 public class TiltManager : MonoBehaviour
 {
-    public float xAngle = 0;
-    public float zAngle = 0;
     public CircularDrive zValve, xValve;
     [SerializeField] Transform cameraPivot;
     [SerializeField] private string LRaxis, DUaxis;
