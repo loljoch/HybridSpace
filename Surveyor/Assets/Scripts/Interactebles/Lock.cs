@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Lock : Snappable
 {
-    public bool isLocked;
+    private bool isLocked = true;
     [SerializeField] private Animator targetedDoor;
+    [SerializeField] private AudioClip openDoorAudio;
+    [SerializeField] private AudioSource audioSource;
 
     public override void OnSnap()
     {
@@ -14,6 +16,11 @@ public class Lock : Snappable
 
     public void Unlock()
     {
-        targetedDoor.SetTrigger("OpenDoor");
+        if(isLocked == true)
+        {
+            audioSource.PlayOneShot(openDoorAudio);
+            targetedDoor.SetTrigger("OpenDoor");
+            isLocked = false;
+        }
     }
 }

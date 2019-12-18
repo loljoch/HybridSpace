@@ -32,25 +32,25 @@ public class TiltManager : MonoBehaviour
 
     private void CheckInput()
     {
-        if(Input.GetKeyDown(KeyCode.UpArrow) && xDirection == -1 && tiltAnimator.GetInteger("xDirection") != zDirection)
+        if(Input.GetKeyDown(KeyCode.UpArrow) && xDirection == -1)
         {
             tiltAnimator.SetInteger("xDirection", xDirection);
             audioSource.PlayOneShot(tiltAudio);
         }
 
-        if(Input.GetKeyDown(KeyCode.DownArrow) && xDirection == 1 && tiltAnimator.GetInteger("xDirection") != zDirection)
+        if(Input.GetKeyDown(KeyCode.DownArrow) && xDirection == 1)
         {
             tiltAnimator.SetInteger("xDirection", xDirection);
             audioSource.PlayOneShot(tiltAudio);
         }
 
-        if(Input.GetKeyDown(KeyCode.LeftArrow) && zDirection == -1 && tiltAnimator.GetInteger("zDirection") != zDirection)
+        if(Input.GetKeyDown(KeyCode.LeftArrow) && zDirection == -1)
         {
             tiltAnimator.SetInteger("zDirection", zDirection);
             audioSource.PlayOneShot(tiltAudio);
         }
 
-        if(Input.GetKeyDown(KeyCode.RightArrow) && zDirection == 1 && tiltAnimator.GetInteger("zDirection") != zDirection)
+        if(Input.GetKeyDown(KeyCode.RightArrow) && zDirection == 1)
         {
             tiltAnimator.SetInteger("zDirection", zDirection);
             audioSource.PlayOneShot(tiltAudio);

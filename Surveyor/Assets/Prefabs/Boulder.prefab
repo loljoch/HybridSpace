@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rollingAudio: {fileID: 8300000, guid: 61ab01576ffc83346bc70adc8b53dc2f, type: 3}
-  onImpact: {fileID: 0}
+  onImpact: {fileID: 8300000, guid: 7a3bddc7e15597f458ae35559f845435, type: 3}
   audioSource: {fileID: 1328468086779681349}
   rb: {fileID: 5235006502915835887}
 --- !u!82 &1328468086779681349

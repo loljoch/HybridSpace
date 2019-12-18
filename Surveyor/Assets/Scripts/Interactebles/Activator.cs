@@ -7,6 +7,7 @@ public class Activator : MonoBehaviour
 {
     public UnityEvent onTriggerEnter;
     public bool triggerOnce = true;
+    private int timesTriggered = 0;
     private BoxCollider collider;
 
     void Start()
@@ -16,6 +17,7 @@ public class Activator : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        timesTriggered += 1;
         collider.enabled = false;
         onTriggerEnter?.Invoke();
 
