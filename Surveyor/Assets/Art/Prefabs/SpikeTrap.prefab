@@ -1673,6 +1673,7 @@ GameObject:
   - component: {fileID: 8871333108566185867}
   - component: {fileID: 8871333108566185861}
   - component: {fileID: 8871333108566185866}
+  - component: {fileID: 8761571365782865302}
   m_Layer: 0
   m_Name: SpikeTrap
   m_TagString: Untagged
@@ -1818,6 +1819,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &8761571365782865302
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8871333108566185864}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.8075657, y: 1.6742094, z: 2.7515295}
+  m_Center: {x: 0.045795202, y: 0.8371047, z: 0}
 --- !u!1 &8871333108631031510
 GameObject:
   m_ObjectHideFlags: 0
@@ -2778,7 +2792,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8871333109201560664}
   m_Layer: 0
-  m_Name: SpikeTrap 1
+  m_Name: SpikeTrap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
