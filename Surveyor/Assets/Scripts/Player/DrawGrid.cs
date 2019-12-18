@@ -74,12 +74,14 @@ public class DrawGrid : MonoBehaviour
         if (Physics.Raycast(pos, Vector3.down * 1.5f, out hit))
         {
             Vector3 hitPos = hit.point;
-            if (!Physics.Linecast(camTransform.position, hitPos, platformLayer))
-            {
-                hitPos.y = yPos;
-                GetCell().position = hitPos;
-                return true;
-            }
+            hitPos.y = yPos;
+            GetCell().position = hitPos;
+            return true;
+            //Debug.DrawLine(camTransform.position, hitPos, Color.red, 4);
+            //if (!Physics.Linecast(camTransform.position, hitPos, platformLayer))
+            //{
+                
+            //}
         }
 
         return false;

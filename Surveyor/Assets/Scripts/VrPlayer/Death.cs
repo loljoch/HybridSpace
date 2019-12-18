@@ -9,7 +9,7 @@ public class Death : MonoBehaviour
 
     private void Start()
     {
-        fade.OnStartFade(Color.black, 1, true);
+        // fade.OnStartFade(Color.black, 1, true);
     }
 
     private void Die()

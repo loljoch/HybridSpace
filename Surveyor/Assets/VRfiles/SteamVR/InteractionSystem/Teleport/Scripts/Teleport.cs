@@ -14,6 +14,8 @@ namespace Valve.VR.InteractionSystem
     //-------------------------------------------------------------------------
     public class Teleport : MonoBehaviour
     {
+		public UnityEvent OnTeleport;
+
         public SteamVR_Action_Boolean teleportAction = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("Teleport");
 
         public LayerMask traceLayerMask;
@@ -861,11 +863,10 @@ namespace Valve.VR.InteractionSystem
 
 			TeleportPoint teleportPoint = teleportingToMarker as TeleportPoint;
 			Vector3 teleportPosition = pointedAtPosition;
-
+			
 			if ( teleportPoint != null )
 			{
 				teleportPosition = teleportPoint.transform.position;
-
 				//Teleport to a new scene
 				if ( teleportPoint.teleportType == TeleportPoint.TeleportPointType.SwitchToNewScene )
 				{
@@ -904,7 +905,7 @@ namespace Valve.VR.InteractionSystem
 			}
 
 			Teleport.Player.Send( pointedAtTeleportMarker );
-
+			OnTeleport?.Invoke();
 		}
 
 

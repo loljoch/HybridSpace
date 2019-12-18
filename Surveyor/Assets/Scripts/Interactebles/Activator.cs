@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Valve.VR.InteractionSystem;
 
 public class Activator : MonoBehaviour
 {
@@ -11,12 +12,15 @@ public class Activator : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        triggered = true;
-        onTriggerEnter?.Invoke();
-
-        if (triggerOnce)
+        if(other.GetComponent<BodyCollider>() || other.GetComponent<Boulder>())
         {
-            GetComponent<BoxCollider>().enabled = false;
+            triggered = true;
+            onTriggerEnter?.Invoke();
+
+            if (triggerOnce)
+            {
+                GetComponent<BoxCollider>().enabled = false;
+            }
         }
     }
 }

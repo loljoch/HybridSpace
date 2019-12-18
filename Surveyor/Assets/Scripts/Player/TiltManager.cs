@@ -5,7 +5,9 @@ using Valve.VR.InteractionSystem;
 
 public class TiltManager : MonoBehaviour
 {
-    public CircularDrive zValve, xValve;
+    private int zDirection, xDirection;
+    public int XDirection {get{return xDirection;} set{xDirection = value;}}
+    public int ZDirection {get{return zDirection;} set{zDirection = value;}}
     [SerializeField] Transform cameraPivot;
     [SerializeField] private string LRaxis, DUaxis;
     [SerializeField] private List<Rigidbody> rbList;
@@ -25,14 +27,32 @@ public class TiltManager : MonoBehaviour
 
     private void Update()
     {
-        float xAngleMax = xValve.outAngle / 4.5f;
-        float zAngleMax = zValve.outAngle / 4.5f;
-        wantedVector3.x = xAngleMax * -Input.GetAxis(DUaxis);
-        wantedVector3.z = zAngleMax * -Input.GetAxis(LRaxis);
+        if(Input.GetKey(KeyCode.LeftArrow) && xDirection == -1)
+        {
+            //tiltXleft
+            Debug.Log("TiltedLeft");
+        }
 
-        float distCovered = (Time.time - startTime) * speed;
-        float fractionOfJourney = distCovered / journeyLength;
-        cameraPivot.localEulerAngles = Vector3.Lerp(cameraPivot.localEulerAngles, wantedVector3, fractionOfJourney);
+        if(Input.GetKey(KeyCode.RightArrow) && xDirection == 1)
+        {
+            //tiltXright
+            Debug.Log("TiltedRight");
+
+        }
+
+        if(Input.GetKey(KeyCode.UpArrow) && zDirection == -1)
+        {
+            //tiltZforwarddown
+            Debug.Log("TiltedForwardDown");
+
+        }
+
+        if(Input.GetKey(KeyCode.DownArrow) && zDirection == 1)
+        {
+            //tiltZforwardup
+            Debug.Log("TiltedForwardUp");
+
+        }
     }
 
     private void FixedUpdate()
