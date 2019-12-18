@@ -14159,7 +14159,7 @@ GameObject:
   - component: {fileID: 1649045114889328292}
   - component: {fileID: 8676349652586920926}
   m_Layer: 0
-  m_Name: Treasure
+  m_Name: TreasureChest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14369,7 +14369,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 335a7a89bdcfdd748b41bf17f7e72497, type: 2}
+  - {fileID: 2100000, guid: d57fb3cfe7ebb3c4dbceb47afaff5a57, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14464,8 +14464,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 2.9210312
+  MaxDistance: 8.395111
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -14598,7 +14598,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 9ff2716c93b11cc4c9ba41bd71b7ee5f, type: 2}
-  - {fileID: 2100000, guid: 335a7a89bdcfdd748b41bf17f7e72497, type: 2}
+  - {fileID: 2100000, guid: d57fb3cfe7ebb3c4dbceb47afaff5a57, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14676,7 +14676,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 335a7a89bdcfdd748b41bf17f7e72497, type: 2}
+  - {fileID: 2100000, guid: a96f7cbc1a4ebb24db66e30a18f0cd10, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14865,7 +14865,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 335a7a89bdcfdd748b41bf17f7e72497, type: 2}
+  - {fileID: 2100000, guid: a96f7cbc1a4ebb24db66e30a18f0cd10, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
