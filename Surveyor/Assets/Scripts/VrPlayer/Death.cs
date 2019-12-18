@@ -7,14 +7,11 @@ public class Death : MonoBehaviour
 {
     public Transform spawnPoint;
 
-    [SerializeField] private AudioClip deathSound;
-    [SerializeField] private AudioSource audioSource;
     [SerializeField] private DrawGrid drawGrid;
     [SerializeField] private Transform playerTransform;
 
     public void Die()
     {
-        audioSource.PlayOneShot(deathSound);
         SteamVR_Fade.Start(Color.clear, 0);
         Color lightRed = Color.red;
         lightRed.a = 0.5f;
