@@ -2,13 +2,15 @@
 
 public class Boulder : MonoBehaviour
 {
+    public float soundThreshold = 0.5f;
+    [SerializeField] private LayerMask wallLayer;
     [SerializeField] private AudioClip rollingAudio, onImpact;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private Rigidbody rb;
 
     private void FixedUpdate() 
     {
-        if(rb.velocity.x + rb.velocity.z > 0)
+        if(rb.velocity.x + rb.velocity.z > soundThreshold)
         {
             audioSource.clip = rollingAudio;
             audioSource.Play();
@@ -17,7 +19,7 @@ public class Boulder : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if(rb.velocity.x + rb.velocity.z > 0)
+        if(other.gameObject.layer == wallLayer)
         {
             audioSource.PlayOneShot(onImpact);
         }

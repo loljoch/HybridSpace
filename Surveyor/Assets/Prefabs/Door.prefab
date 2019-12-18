@@ -127,6 +127,8 @@ MonoBehaviour:
   keyLockPoint: {fileID: 753135916154800458}
   isLocked: 0
   targetedDoor: {fileID: 6214857577710485624}
+  openDoorAudio: {fileID: 8300000, guid: 10fd1ba55d9520e4f98df69e8bfbb91d, type: 3}
+  audioSource: {fileID: 7039242273181359178}
 --- !u!65 &1050395262
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -196,7 +198,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 10fd1ba55d9520e4f98df69e8bfbb91d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.229
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -205,7 +207,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 3
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
