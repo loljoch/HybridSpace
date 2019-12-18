@@ -11,11 +11,19 @@ public class TiltManager : MonoBehaviour
     [SerializeField] Animator tiltAnimator;
     [SerializeField] private string LRaxis, DUaxis;
     [SerializeField] private List<Rigidbody> rbList;
+    [SerializeField] private AudioClip tiltAudio;
+    [SerializeField] private AudioSource audioSource;
     private Vector3 wantedVector3 = Vector3.zero;
 
     public float speed = 1.0F;
     private float startTime;
     private float journeyLength;
+
+    void Start()
+    {
+        tiltAnimator.SetInteger("zDirection", 0);
+        tiltAnimator.SetInteger("xDirection", 0);
+    }
 
     private void Update()
     {
@@ -24,30 +32,35 @@ public class TiltManager : MonoBehaviour
 
     private void CheckInput()
     {
-        if(Input.GetKeyDown(KeyCode.UpArrow) && xDirection == -1)
+        if(Input.GetKeyDown(KeyCode.UpArrow) && xDirection == -1 && tiltAnimator.GetInteger("xDirection") != zDirection)
         {
             tiltAnimator.SetInteger("xDirection", xDirection);
+            audioSource.PlayOneShot(tiltAudio);
         }
 
-        if(Input.GetKeyDown(KeyCode.DownArrow) && xDirection == 1)
+        if(Input.GetKeyDown(KeyCode.DownArrow) && xDirection == 1 && tiltAnimator.GetInteger("xDirection") != zDirection)
         {
             tiltAnimator.SetInteger("xDirection", xDirection);
+            audioSource.PlayOneShot(tiltAudio);
         }
 
-        if(Input.GetKeyDown(KeyCode.LeftArrow) && zDirection == -1)
+        if(Input.GetKeyDown(KeyCode.LeftArrow) && zDirection == -1 && tiltAnimator.GetInteger("zDirection") != zDirection)
         {
             tiltAnimator.SetInteger("zDirection", zDirection);
+            audioSource.PlayOneShot(tiltAudio);
         }
 
-        if(Input.GetKeyDown(KeyCode.RightArrow) && zDirection == 1)
+        if(Input.GetKeyDown(KeyCode.RightArrow) && zDirection == 1 && tiltAnimator.GetInteger("zDirection") != zDirection)
         {
             tiltAnimator.SetInteger("zDirection", zDirection);
+            audioSource.PlayOneShot(tiltAudio);
         }
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && tiltAnimator.GetInteger("zDirection") + tiltAnimator.GetInteger("xDirection") != 0)
         {
             tiltAnimator.SetInteger("zDirection", 0);
             tiltAnimator.SetInteger("xDirection", 0);
+            audioSource.PlayOneShot(tiltAudio);
         }
 
         wantedVector3.x = tiltAnimator.GetInteger("xDirection");

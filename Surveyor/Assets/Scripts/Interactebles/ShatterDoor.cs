@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShatterDoor : MonoBehaviour
 {
+    [SerializeField] private AudioSource audioSource;
     private MeshCollider[] shatteredPartsColl;
     private Rigidbody[] shatteredPartsRb;
     private BoxCollider ownCollider;
@@ -19,6 +20,7 @@ public class ShatterDoor : MonoBehaviour
     {
         if (other.GetComponent<Boulder>())
         {
+            audioSource.Play();
             Shatter();
         }
     }

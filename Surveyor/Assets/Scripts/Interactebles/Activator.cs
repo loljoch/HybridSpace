@@ -6,29 +6,28 @@ using UnityEngine.Events;
 public class Activator : MonoBehaviour
 {
     public UnityEvent onTriggerEnter;
-    public bool triggered = false;
     public bool triggerOnce = true;
+    private BoxCollider collider;
+
+    void Start()
+    {
+        collider = GetComponent<BoxCollider>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(!triggered)
-        {
-            triggered = true;
-            onTriggerEnter?.Invoke();
+        collider.enabled = false;
+        onTriggerEnter?.Invoke();
 
-            if (!triggerOnce)
-            {
-                StartCoroutine(CanTriggerAgain());
-            }else{
-                GetComponent<BoxCollider>().enabled = false;
-            }
+        if (!triggerOnce)
+        {
+            StartCoroutine(CanTriggerAgain());
         }
-        
     }
 
     private IEnumerator CanTriggerAgain()
     {
-        yield return new WaitForSeconds(2f);
-        triggered = false;
+        yield return new WaitForSeconds(10f);
+        collider.enabled = true;
     }
 }

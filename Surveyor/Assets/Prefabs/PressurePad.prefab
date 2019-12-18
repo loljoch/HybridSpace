@@ -45,8 +45,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.3240159, z: 1}
-  m_Center: {x: 0, y: 0.16193278, z: 0}
+  m_Size: {x: 0.9179338, y: 2.9984493, z: 0.9373795}
+  m_Center: {x: 0.0084216865, y: 1.50612, z: -0.019722676}
 --- !u!114 &985115771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,8 +73,7 @@ MonoBehaviour:
           m_StringArgument: OpenDoor
           m_BoolArgument: 0
         m_CallState: 2
-  triggered: 0
-  triggerOnce: 1
+  triggerOnce: 0
 --- !u!1 &2124379220552256346
 GameObject:
   m_ObjectHideFlags: 0

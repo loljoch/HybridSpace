@@ -975,6 +975,7 @@ GameObject:
   - component: {fileID: 5216342084768279225}
   - component: {fileID: 1242719200451907560}
   - component: {fileID: 225917635014581878}
+  - component: {fileID: 4211617119106374256}
   m_Layer: 0
   m_Name: Door_Block
   m_TagString: Untagged
@@ -1042,6 +1043,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &4211617119106374256
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5805431461744354084}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 75.2129, y: 300, z: 300}
+  m_Center: {x: 9.0479555, y: 150, z: 0.000118669996}
 --- !u!1 &6507082315015180096
 GameObject:
   m_ObjectHideFlags: 0
