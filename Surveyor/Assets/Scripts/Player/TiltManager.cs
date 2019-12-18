@@ -8,7 +8,7 @@ public class TiltManager : MonoBehaviour
     private int zDirection, xDirection;
     public int XDirection {get{return xDirection;} set{xDirection = value;}}
     public int ZDirection {get{return zDirection;} set{zDirection = value;}}
-    [SerializeField] Transform cameraPivot;
+    [SerializeField] Animator tiltAnimator;
     [SerializeField] private string LRaxis, DUaxis;
     [SerializeField] private List<Rigidbody> rbList;
     private Vector3 wantedVector3 = Vector3.zero;
@@ -17,42 +17,41 @@ public class TiltManager : MonoBehaviour
     private float startTime;
     private float journeyLength;
 
-
-    void Start()
-    {
-        startTime = Time.time;
-
-        journeyLength = Vector3.Distance(cameraPivot.localEulerAngles, wantedVector3);
-    }
-
     private void Update()
     {
-        if(Input.GetKey(KeyCode.LeftArrow) && xDirection == -1)
+        CheckInput();
+    }
+
+    private void CheckInput()
+    {
+        if(Input.GetKeyDown(KeyCode.UpArrow) && xDirection == -1)
         {
-            //tiltXleft
-            Debug.Log("TiltedLeft");
+            tiltAnimator.SetInteger("xDirection", xDirection);
         }
 
-        if(Input.GetKey(KeyCode.RightArrow) && xDirection == 1)
+        if(Input.GetKeyDown(KeyCode.DownArrow) && xDirection == 1)
         {
-            //tiltXright
-            Debug.Log("TiltedRight");
-
+            tiltAnimator.SetInteger("xDirection", xDirection);
         }
 
-        if(Input.GetKey(KeyCode.UpArrow) && zDirection == -1)
+        if(Input.GetKeyDown(KeyCode.LeftArrow) && zDirection == -1)
         {
-            //tiltZforwarddown
-            Debug.Log("TiltedForwardDown");
-
+            tiltAnimator.SetInteger("zDirection", zDirection);
         }
 
-        if(Input.GetKey(KeyCode.DownArrow) && zDirection == 1)
+        if(Input.GetKeyDown(KeyCode.RightArrow) && zDirection == 1)
         {
-            //tiltZforwardup
-            Debug.Log("TiltedForwardUp");
-
+            tiltAnimator.SetInteger("zDirection", zDirection);
         }
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            tiltAnimator.SetInteger("zDirection", 0);
+            tiltAnimator.SetInteger("xDirection", 0);
+        }
+
+        wantedVector3.x = tiltAnimator.GetInteger("xDirection");
+        wantedVector3.z = tiltAnimator.GetInteger("zDirection");
     }
 
     private void FixedUpdate()
@@ -63,7 +62,7 @@ public class TiltManager : MonoBehaviour
     private void TiltObjects()
     {
         Vector3 tiltVelocity = Vector3.zero;
-        tiltVelocity.x = -wantedVector3.z;
+        tiltVelocity.x = wantedVector3.z;
         tiltVelocity.z = -wantedVector3.x;
 
         for (int i = 0; i < rbList.Count; i++)
