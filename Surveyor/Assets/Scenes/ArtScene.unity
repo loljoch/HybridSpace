@@ -5246,7 +5246,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396073175}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 6524bae5213150940bbeac2542e195cf, type: 2}
   m_CullingMode: 0
@@ -20328,7 +20328,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080005653}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6016c165042d1d542a06819c9f5534e3, type: 3}
@@ -35369,13 +35369,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630605763}
-  m_LocalRotation: {x: -0, y: 0.2778295, z: -0, w: -0.9606305}
-  m_LocalPosition: {x: 0.11, y: 1.73, z: 3.36}
+  m_LocalRotation: {x: -0.1743239, y: 0.2468291, z: -0.0029599168, w: -0.95324594}
+  m_LocalPosition: {x: 0.389, y: 1.746, z: 0.592}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 327.739, z: 0}
+  m_LocalEulerAnglesHint: {x: 19.5, y: 330.124, z: -4.894}
 --- !u!114 &1630605767
 MonoBehaviour:
   m_ObjectHideFlags: 0
