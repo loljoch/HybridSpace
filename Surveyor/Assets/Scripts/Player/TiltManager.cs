@@ -19,10 +19,17 @@ public class TiltManager : MonoBehaviour
     private float startTime;
     private float journeyLength;
 
+    private void Awake() {
+        
+        tiltAnimator = FindObjectOfType<VrObjectID>().GetComponent<Animator>();
+        audioSource = FindObjectOfType<SwitchScenes>().GetComponent<AudioSource>();
+    }
+
     void Start()
     {
         tiltAnimator.SetInteger("zDirection", 0);
         tiltAnimator.SetInteger("xDirection", 0);
+
     }
 
     private void Update()

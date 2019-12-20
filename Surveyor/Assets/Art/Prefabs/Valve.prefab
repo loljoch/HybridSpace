@@ -973,7 +973,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   minAngle: -45
-  freezeOnMin: 1
+  freezeOnMin: 0
   onMinAngle:
     m_PersistentCalls:
       m_Calls:
@@ -989,7 +989,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   maxAngle: 45
-  freezeOnMax: 1
+  freezeOnMax: 0
   onMaxAngle:
     m_PersistentCalls:
       m_Calls:

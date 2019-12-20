@@ -7,12 +7,14 @@ public class SwitchScenes : MonoBehaviour
 {
     [SerializeField] private AudioClip wooshSound;
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private DrawGrid gridDraw;
 
     private void Update() 
     {
         if(Input.GetKeyDown(KeyCode.S))
         {
             SwitchToDarkScene();
+            gridDraw.DrawCells();
         }
     }
     

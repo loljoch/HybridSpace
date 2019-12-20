@@ -5,6 +5,7 @@ using UnityEngine;
 public class DrawGrid : MonoBehaviour
 {
     public Transform gridParent;
+    public Transform parentForGrid;
     [SerializeField] private Transform cellPrefab;
     [SerializeField] private Transform camTransform;
     [SerializeField] private Vector2 gridSize = new Vector2(5, 5);
@@ -18,6 +19,7 @@ public class DrawGrid : MonoBehaviour
     private void Awake()
     {
         gridParent = new GameObject("Grid").transform;
+        gridParent.parent = parentForGrid;
         DrawCells();
         gridParent.transform.position = new Vector3(xGridOffset, 0, zGridOffset);
     }
